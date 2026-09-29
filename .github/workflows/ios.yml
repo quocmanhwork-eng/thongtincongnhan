@@ -46,8 +46,10 @@ jobs:
             -project ThongTinCongNhan.xcodeproj \
             -scheme ThongTinCongNhan \
             -destination "id=${{ steps.sim.outputs.udid }}" \
-            CODE_SIGNING_ALLOWED=NO 2>&1 | tee test.log | grep -E "error:|warning: .*ThongTinCongNhan/|Test Case .*(passed|failed)|Executed|\*\* TEST" || true
+            CODE_SIGNING_ALLOWED=NO 2>&1 | tee test.log | grep -iE "error:|warning: .*ThongTinCongNhan/|test case .*(passed|failed)|\*\* TEST" || true
+          echo "Passed: $(grep -ciE "test case .* passed" test.log) · Failed: $(grep -ciE "test case .* failed" test.log)"
           grep -q "\*\* TEST SUCCEEDED \*\*" test.log
+          grep -qiE "test case .* passed" test.log
 
       - name: Build unsigned IPA (cài bằng Sideloadly / AltStore)
         run: |

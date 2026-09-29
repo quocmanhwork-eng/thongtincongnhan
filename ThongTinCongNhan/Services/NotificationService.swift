@@ -58,7 +58,20 @@ final class NotificationService: NSObject, ObservableObject, UNUserNotificationC
         await reschedule(snapshots: snapshots)
     }
 
+    /// Các lần đặt lại chạy lần lượt, để lần cũ không ghi đè kết quả của lần mới.
     func reschedule(snapshots: [AppointmentSnapshot]) async {
+        let previous = rescheduleTask
+        let task = Task {
+            await previous?.value
+            await self.apply(snapshots)
+        }
+        rescheduleTask = task
+        await task.value
+    }
+
+    private var rescheduleTask: Task<Void, Never>?
+
+    private func apply(_ snapshots: [AppointmentSnapshot]) async {
         let pending = await center.pendingNotificationRequests()
         let oldIDs = pending.map(\.identifier).filter { $0.hasPrefix(ReminderPlanner.identifierPrefix) }
         center.removePendingNotificationRequests(withIdentifiers: oldIDs)

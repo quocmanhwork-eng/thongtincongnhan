@@ -161,11 +161,19 @@ struct WorkerFormView: View {
         let result = SmartPaste.parse(text)
         let filled = draft.fill(from: result)
         let trimmed = text.trimmingCharacters(in: .whitespacesAndNewlines)
-        if !trimmed.isEmpty && !draft.notes.contains(trimmed) && trimmed.count > 15 {
+        // Tin nhắn dài thì lưu nguyên văn vào ghi chú để không mất thông tin.
+        let addToNotes = trimmed.count > 15 && !draft.notes.contains(trimmed)
+        if addToNotes {
             draft.notes = draft.notes.isEmpty ? trimmed : draft.notes + "\n" + trimmed
         }
         if result.hometown != nil { showsMoreInfo = true }
-        pasteMessage = filled > 0 ? "Đã điền \(filled) ô từ tin nhắn. Kiểm tra lại trước khi lưu." : "Không tìm thấy SĐT / tên trong tin nhắn — đã chép vào ghi chú."
+        if filled > 0 {
+            pasteMessage = "Đã điền \(filled) ô từ tin nhắn. Kiểm tra lại trước khi lưu."
+        } else if addToNotes {
+            pasteMessage = "Không tìm thấy SĐT / tên — đã chép tin nhắn vào ghi chú."
+        } else {
+            pasteMessage = "Không tìm thấy SĐT / tên trong nội dung vừa dán."
+        }
     }
 
     private func save() {
