@@ -234,7 +234,7 @@ struct SettingsView: View {
 
     private var aboutSection: some View {
         Section("Giới thiệu") {
-            LabeledContent("Ứng dụng", value: "Quản lý công nhân")
+            LabeledContent("Ứng dụng", value: "CRM – Quản lý công nhân")
             LabeledContent("Phiên bản", value: Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0")
         }
     }

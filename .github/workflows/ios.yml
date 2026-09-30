@@ -43,10 +43,10 @@ jobs:
         run: |
           set -o pipefail
           xcodebuild test \
-            -project ThongTinCongNhan.xcodeproj \
-            -scheme ThongTinCongNhan \
+            -project CRM.xcodeproj \
+            -scheme CRM \
             -destination "id=${{ steps.sim.outputs.udid }}" \
-            CODE_SIGNING_ALLOWED=NO 2>&1 | tee test.log | grep -iE "error:|warning: .*ThongTinCongNhan/|test case .*(passed|failed)|\*\* TEST" || true
+            CODE_SIGNING_ALLOWED=NO 2>&1 | tee test.log | grep -iE "error:|warning: .*CRM/|test case .*(passed|failed)|\*\* TEST" || true
           echo "Passed: $(grep -ciE "test case .* passed" test.log) · Failed: $(grep -ciE "test case .* failed" test.log)"
           grep -q "\*\* TEST SUCCEEDED \*\*" test.log
           grep -qiE "test case .* passed" test.log
@@ -55,8 +55,8 @@ jobs:
         run: |
           set -o pipefail
           xcodebuild build \
-            -project ThongTinCongNhan.xcodeproj \
-            -scheme ThongTinCongNhan \
+            -project CRM.xcodeproj \
+            -scheme CRM \
             -configuration Release \
             -sdk iphoneos \
             -destination "generic/platform=iOS" \
@@ -64,14 +64,14 @@ jobs:
             CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" \
             -quiet
           mkdir -p Payload
-          cp -R build/Build/Products/Release-iphoneos/ThongTinCongNhan.app Payload/
-          zip -qry ThongTinCongNhan-unsigned.ipa Payload
+          cp -R build/Build/Products/Release-iphoneos/CRM.app Payload/
+          zip -qry CRM-unsigned.ipa Payload
 
       - name: Upload IPA
         uses: actions/upload-artifact@v4
         with:
-          name: ThongTinCongNhan-ipa
-          path: ThongTinCongNhan-unsigned.ipa
+          name: CRM-ipa
+          path: CRM-unsigned.ipa
           retention-days: 30
 
       - name: Upload test log

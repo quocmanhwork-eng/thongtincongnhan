@@ -1,5 +1,5 @@
 import XCTest
-@testable import ThongTinCongNhan
+@testable import CRM
 
 private let vnCalendar: Calendar = {
     var calendar = Calendar(identifier: .gregorian)

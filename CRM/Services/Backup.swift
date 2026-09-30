@@ -86,7 +86,7 @@ enum BackupCodec {
         case notABackup
 
         var errorDescription: String? {
-            "Tệp này không phải bản sao lưu của app Quản lý công nhân."
+            "Tệp này không phải bản sao lưu của app CRM."
         }
     }
 

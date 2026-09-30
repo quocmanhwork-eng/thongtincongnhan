@@ -1,4 +1,4 @@
-# Công Nhân – App quản lý ứng viên & nhắc hẹn đi làm (iOS)
+# CRM – App quản lý công nhân & nhắc hẹn đi làm (iOS)
 
 App iPhone giúp người làm **tuyển dụng lao động phổ thông** lưu thông tin công nhân tìm được trên
 Zalo, Facebook, TikTok… và **tự động nhắc hẹn** để không bỏ lỡ ngày công nhân đi làm, phỏng vấn, khám sức khỏe.
@@ -61,20 +61,33 @@ App chưa đưa lên App Store nên cần tự cài. Có 2 cách:
 
 1. Cài **Xcode** (miễn phí) từ App Store trên Mac (Xcode 16 trở lên).
 2. Tải code về: trên GitHub bấm **Code → Download ZIP**, giải nén.
-3. Mở tệp `ThongTinCongNhan.xcodeproj`.
-4. Bấm vào dự án **ThongTinCongNhan** (cột trái) → tab **Signing & Capabilities**:
+3. Mở tệp `CRM.xcodeproj`.
+4. Bấm vào dự án **CRM** (cột trái) → tab **Signing & Capabilities**:
    - **Team**: chọn *Add an Account…* và đăng nhập Apple ID của bạn, rồi chọn team đó.
-   - Nếu báo lỗi Bundle Identifier, đổi `com.quocmanh.thongtincongnhan` thành tên khác, ví dụ `com.tenban.congnhan`.
+   - Nếu báo lỗi Bundle Identifier, đổi `com.quocmanh.crm` thành tên khác, ví dụ `com.tenban.congnhan`.
 5. Cắm iPhone vào Mac bằng cáp, chọn iPhone ở thanh trên cùng của Xcode, bấm nút ▶ (Run).
+   Muốn xem thử trước mà không cần iPhone: chọn máy ảo **iPhone 16** rồi bấm ▶.
 6. Lần đầu trên iPhone:
    - **Cài đặt → Quyền riêng tư & Bảo mật → Chế độ nhà phát triển** → Bật (máy sẽ khởi động lại).
    - **Cài đặt → Cài đặt chung → Quản lý VPN & thiết bị** → chọn Apple ID của bạn → **Tin cậy**.
-7. Mở app **Công Nhân**, bấm **Cho phép** thông báo.
+7. Mở app **CRM**, bấm **Cho phép** thông báo.
+
+### Nút ▶ (Run) bị mờ, không bấm được?
+
+- **Không tự đổi tên** tệp `CRM.xcodeproj`, thư mục `CRM`, `CRMTests` bên trong. Đổi tên là Xcode mất liên kết.
+  (Đổi tên thư mục ngoài cùng sau khi giải nén thì không sao.) Lỡ đổi rồi thì xóa đi, tải lại ZIP.
+- Mở đúng tệp **`CRM.xcodeproj`** (nhấp đúp), không mở tệp `.swift` lẻ hay kéo cả thư mục vào Xcode.
+- Ô thiết bị trên thanh trên cùng hiện **"iOS … Not Installed"** / nút **GET** → bấm **GET**
+  (hoặc **Xcode → Settings → Components** → iOS → **Get**), chờ tải xong (~8 GB).
+- Ô thiết bị ghi **"Any iOS Device"** → bấm vào, chọn **iPhone 16** (máy ảo) hoặc iPhone của bạn.
+- Thanh trên cùng ghi **"No Scheme"** → menu **Product → Scheme → CRM**.
+- Cần **Xcode 16 trở lên** (xem ở **Xcode → About Xcode**).
+- Nếu để thư mục trên ổ cứng ngoài mà gặp lỗi lạ, chép thư mục vào **Màn hình nền (Desktop)** rồi mở lại.
 
 ### Cách 2 – Không có Mac (dùng máy tính Windows + Sideloadly)
 
 1. Trên GitHub, vào tab **Actions** → chọn lần chạy mới nhất có dấu ✅ → phần **Artifacts** tải
-   **ThongTinCongNhan-ipa** (giải nén ra tệp `ThongTinCongNhan-unsigned.ipa`).
+   **CRM-ipa** (giải nén ra tệp `CRM-unsigned.ipa`).
 2. Cài **iTunes** (bản tải từ apple.com) và **Sideloadly** (sideloadly.io) trên máy tính.
 3. Cắm iPhone, mở Sideloadly, kéo tệp `.ipa` vào, nhập Apple ID, bấm **Start**.
 4. Trên iPhone làm bước 6–7 như Cách 1.
@@ -94,25 +107,25 @@ App chưa đưa lên App Store nên cần tự cài. Có 2 cách:
 3. Trước giờ hẹn 1 tiếng app nhắc lần nữa → gọi hỏi đã lên đường chưa.
 4. Sau giờ hẹn → vuốt **Đã đến** hoặc **Không đến**. Mục *Quá giờ – cần cập nhật* giúp không sót ai.
 5. Vào **Cài đặt → Sao lưu** mỗi tuần, gửi tệp sao lưu vào Zalo "Cloud của tôi".
-6. Trong **Cài đặt iPhone → Tập trung**, cho phép app Công Nhân báo cả khi bật *Không làm phiền*.
+6. Trong **Cài đặt iPhone → Tập trung**, cho phép app CRM báo cả khi bật *Không làm phiền*.
 
 ---
 
 ## Dành cho lập trình viên
 
 ```
-ThongTinCongNhan/
-├── ThongTinCongNhanApp.swift     # Điểm vào app, AppDelegate (gắn delegate thông báo)
+CRM/
+├── CRMApp.swift                  # Điểm vào app, AppDelegate (gắn delegate thông báo)
 ├── Models/                       # SwiftData: Worker, Appointment; enum trạng thái; bản nháp form
 ├── Services/                     # Logic thuần (có test): SĐT, ngày giờ, lập lịch nhắc,
 │                                 #   mẫu tin nhắn, dán nhanh, CSV, sao lưu; NotificationService
 └── Views/                        # SwiftUI: Hôm nay, Công nhân, Lịch hẹn, Cài đặt, thành phần dùng chung
-ThongTinCongNhanTests/            # Unit test (XCTest)
+CRMTests/                        # Unit test (XCTest)
 .github/workflows/ios.yml         # CI: chạy test trên simulator + build tệp .ipa chưa ký
 ```
 
 - Thông báo: mỗi lần dữ liệu thay đổi hoặc mở app, `NotificationService.reschedule` tính lại toàn bộ lịch
   nhắc bằng `ReminderPlanner` và chỉ đặt **58 thông báo gần nhất** (iOS giới hạn 64 thông báo chờ/app),
   nên không bao giờ bị "rơi" nhắc hẹn dù có rất nhiều lịch.
-- Chạy test: `xcodebuild test -project ThongTinCongNhan.xcodeproj -scheme ThongTinCongNhan -destination 'platform=iOS Simulator,name=iPhone 16'`
+- Chạy test: `xcodebuild test -project CRM.xcodeproj -scheme CRM -destination 'platform=iOS Simulator,name=iPhone 16'`
 - Dự án dùng *folder đồng bộ* của Xcode 16: thêm tệp `.swift` vào thư mục là tự có trong dự án.

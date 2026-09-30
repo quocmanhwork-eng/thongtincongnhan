@@ -12,24 +12,24 @@
 			containerPortal = AA000000000000000000000A /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = AA0000000000000000000006;
-			remoteInfo = ThongTinCongNhan;
+			remoteInfo = CRM;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		AA0000000000000000000001 /* ThongTinCongNhan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThongTinCongNhan.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		AA0000000000000000000011 /* ThongTinCongNhanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThongTinCongNhanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA0000000000000000000001 /* CRM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CRM.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA0000000000000000000011 /* CRMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CRMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		AA0000000000000000000002 /* ThongTinCongNhan */ = {
+		AA0000000000000000000002 /* CRM */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = ThongTinCongNhan;
+			path = CRM;
 			sourceTree = "<group>";
 		};
-		AA0000000000000000000012 /* ThongTinCongNhanTests */ = {
+		AA0000000000000000000012 /* CRMTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = ThongTinCongNhanTests;
+			path = CRMTests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -55,8 +55,8 @@
 		AA0000000000000000000004 = {
 			isa = PBXGroup;
 			children = (
-				AA0000000000000000000002 /* ThongTinCongNhan */,
-				AA0000000000000000000012 /* ThongTinCongNhanTests */,
+				AA0000000000000000000002 /* CRM */,
+				AA0000000000000000000012 /* CRMTests */,
 				AA0000000000000000000005 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -64,8 +64,8 @@
 		AA0000000000000000000005 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AA0000000000000000000001 /* ThongTinCongNhan.app */,
-				AA0000000000000000000011 /* ThongTinCongNhanTests.xctest */,
+				AA0000000000000000000001 /* CRM.app */,
+				AA0000000000000000000011 /* CRMTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -73,9 +73,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AA0000000000000000000006 /* ThongTinCongNhan */ = {
+		AA0000000000000000000006 /* CRM */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AA0000000000000000000007 /* Build configuration list for PBXNativeTarget "ThongTinCongNhan" */;
+			buildConfigurationList = AA0000000000000000000007 /* Build configuration list for PBXNativeTarget "CRM" */;
 			buildPhases = (
 				AA0000000000000000000008 /* Sources */,
 				AA0000000000000000000003 /* Frameworks */,
@@ -86,18 +86,18 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				AA0000000000000000000002 /* ThongTinCongNhan */,
+				AA0000000000000000000002 /* CRM */,
 			);
-			name = ThongTinCongNhan;
+			name = CRM;
 			packageProductDependencies = (
 			);
-			productName = ThongTinCongNhan;
-			productReference = AA0000000000000000000001 /* ThongTinCongNhan.app */;
+			productName = CRM;
+			productReference = AA0000000000000000000001 /* CRM.app */;
 			productType = "com.apple.product-type.application";
 		};
-		AA0000000000000000000016 /* ThongTinCongNhanTests */ = {
+		AA0000000000000000000016 /* CRMTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AA0000000000000000000017 /* Build configuration list for PBXNativeTarget "ThongTinCongNhanTests" */;
+			buildConfigurationList = AA0000000000000000000017 /* Build configuration list for PBXNativeTarget "CRMTests" */;
 			buildPhases = (
 				AA0000000000000000000018 /* Sources */,
 				AA0000000000000000000013 /* Frameworks */,
@@ -109,13 +109,13 @@
 				AA000000000000000000001B /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				AA0000000000000000000012 /* ThongTinCongNhanTests */,
+				AA0000000000000000000012 /* CRMTests */,
 			);
-			name = ThongTinCongNhanTests;
+			name = CRMTests;
 			packageProductDependencies = (
 			);
-			productName = ThongTinCongNhanTests;
-			productReference = AA0000000000000000000011 /* ThongTinCongNhanTests.xctest */;
+			productName = CRMTests;
+			productReference = AA0000000000000000000011 /* CRMTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -137,7 +137,7 @@
 					};
 				};
 			};
-			buildConfigurationList = AA000000000000000000000B /* Build configuration list for PBXProject "ThongTinCongNhan" */;
+			buildConfigurationList = AA000000000000000000000B /* Build configuration list for PBXProject "CRM" */;
 			developmentRegion = vi;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -151,8 +151,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AA0000000000000000000006 /* ThongTinCongNhan */,
-				AA0000000000000000000016 /* ThongTinCongNhanTests */,
+				AA0000000000000000000006 /* CRM */,
+				AA0000000000000000000016 /* CRMTests */,
 			);
 		};
 /* End PBXProject section */
@@ -194,7 +194,7 @@
 /* Begin PBXTargetDependency section */
 		AA000000000000000000001B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = AA0000000000000000000006 /* ThongTinCongNhan */;
+			target = AA0000000000000000000006 /* CRM */;
 			targetProxy = AA000000000000000000001A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -329,7 +329,7 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "Công Nhân";
+				INFOPLIST_KEY_CFBundleDisplayName = CRM;
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -342,7 +342,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.quocmanh.thongtincongnhan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.quocmanh.crm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -360,7 +360,7 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "Công Nhân";
+				INFOPLIST_KEY_CFBundleDisplayName = CRM;
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -373,7 +373,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.quocmanh.thongtincongnhan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.quocmanh.crm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -390,12 +390,12 @@
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.quocmanh.thongtincongnhan.tests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.quocmanh.crm.tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ThongTinCongNhan.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ThongTinCongNhan";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CRM.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CRM";
 			};
 			name = Debug;
 		};
@@ -408,19 +408,19 @@
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.quocmanh.thongtincongnhan.tests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.quocmanh.crm.tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ThongTinCongNhan.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ThongTinCongNhan";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CRM.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CRM";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AA000000000000000000000B /* Build configuration list for PBXProject "ThongTinCongNhan" */ = {
+		AA000000000000000000000B /* Build configuration list for PBXProject "CRM" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AA000000000000000000000C /* Debug */,
@@ -429,7 +429,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AA0000000000000000000007 /* Build configuration list for PBXNativeTarget "ThongTinCongNhan" */ = {
+		AA0000000000000000000007 /* Build configuration list for PBXNativeTarget "CRM" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AA000000000000000000000E /* Debug */,
@@ -438,7 +438,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AA0000000000000000000017 /* Build configuration list for PBXNativeTarget "ThongTinCongNhanTests" */ = {
+		AA0000000000000000000017 /* Build configuration list for PBXNativeTarget "CRMTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AA000000000000000000001E /* Debug */,

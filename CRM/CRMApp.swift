@@ -3,7 +3,7 @@ import SwiftUI
 import UIKit
 
 @main
-struct ThongTinCongNhanApp: App {
+struct CRMApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
 
     var body: some Scene {
